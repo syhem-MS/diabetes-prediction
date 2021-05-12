@@ -40,9 +40,9 @@ tesPedigreeFunction".<br/>
 
 
 4/Remarques : (Classification suppervisée: arbre de cart et knn )<br/>
-arbre de cart: le model trouvé est trés complexe avec un taux d'erreur de mauvaise prédiction est de 30%<br/>
+arbre de cart: le e modèle trouvé est trés complexe avec un taux d'erreur de mauvaise prédiction est de 30%<br/>
 knn : le taux d'erreur de mauvaise prediction est de 21% <br/>
-Dans les deux modeles les taux d'erreur sont trés elevés donc on peut pas prendre en considération ces deux modeles.
-
+Dans les deux e modèles les taux d'erreur sont trés elevés donc ils sont rejetés.
+![](images/effects.png)
 
 
