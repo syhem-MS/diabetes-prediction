@@ -37,12 +37,12 @@ tesPedigreeFunction".<br/>
 ![](images/score.png)
 
 <br/>
-
-
+effet de chaque vairible sur Outcome
+<br/>
+![](images/effects.png)
+<br/>
 4/Remarques : (Classification suppervisée: arbre de cart et knn )<br/>
 arbre de cart: le e modèle trouvé est trés complexe avec un taux d'erreur de mauvaise prédiction est de 30%<br/>
 knn : le taux d'erreur de mauvaise prediction est de 21% <br/>
 Dans les deux e modèles les taux d'erreur sont trés elevés donc ils sont rejetés.
-![](images/effects.png)
-
 
