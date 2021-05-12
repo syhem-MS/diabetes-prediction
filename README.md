@@ -15,34 +15,33 @@ les variables sont les suivantes:<br/>
 —DiabetesPedigreeFunction : Fonction pedigree du diabète <br/>
 —Age<br/>
 —Outcome: variable binaire (1=patient malade, 0=patient non malade)<br/>
-"Outcome est une autre variable d'interet elle est expliquée par les autres variables".
+"Outcome est la variable d'interet elle est expliquée par les autres variables".
 Voici un apercu de la base: avec la commande head(diabetes)<br/>
 ![](images/table.png)
 ***
 2/
 
-Aprés avoir construit le premier modèle avec la fonction glm, on a comme résultat toutes les
-variables sont significatives sauf "Age", "Insulin" et "SkinThickness". <br/>
+Aprés avoir construit le premier modèle avec la fonction glm, les
+variables sont toutes  significatives sauf "Age", "Insulin" et "SkinThickness". <br/>
 
 3/
-calculer l’odds-ratio:
+odds-ratio:<br/>
 
-la fonction stepAIC de la librairie MASS on s'est retrouvé avec le modéle suivant 
-"Outocom" expliquée par quatre variables seulement : "Glocuse", "Pregnancies", "BMI" et "Diabe-
+ Grace à la fonction stepAIC de la librairie MASS on s'est retrouvé avec le modéle suivant dont 
+"Outcome" est expliqué par quatre variables seulement : "Glocuse", "Pregnancies", "BMI" et "Diabe-
 tesPedigreeFunction".<br/>
 ![](images/glm.png)
 
-<br/> Avec la librairie forestmodel on a deduit que les variables qui sont des facteurs a risque d'avoir le diabéte sont:
+<br/> Avec la librairie forestmodel les variables qui sont des facteurs a risque sont:
 "Pregnancies", "BMI" et "DiabetesPedigreeFunction".<br/>
 ![](images/score.png)
 
 <br/>
 
 
-4/Classification suppervisée: arbre de cart et knn
-arbre de cart: le model trouvé est trés complexe avec un taux d'erreur de mauvaise prédiction est de 30%
-knn : le taux d'erreur de mauvaise prediction est de 21% 
-
+4/Remarques : (Classification suppervisée: arbre de cart et knn )<br/>
+arbre de cart: le model trouvé est trés complexe avec un taux d'erreur de mauvaise prédiction est de 30%<br/>
+knn : le taux d'erreur de mauvaise prediction est de 21% <br/>
 Dans les deux modeles les taux d'erreur sont trés elevés donc on peut pas prendre en considération ces deux modeles.
 
 
