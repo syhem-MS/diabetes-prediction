@@ -16,6 +16,8 @@ les variables sont les suivantes:
 —Age
 —Outcome: variable binaire (1=patient malade, 0=patient non malade)
 Outcome est une autre variable d'interet elle est expliquée par les autres variables
+Voici un apercu de la base: pour mes 
+![](images/table.png)
 ***
 2/
 
