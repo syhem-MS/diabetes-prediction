@@ -15,8 +15,8 @@ les variables sont les suivantes:
 —DiabetesPedigreeFunction : Fonction pedigree du diabète
 —Age
 —Outcome: variable binaire (1=patient malade, 0=patient non malade)
-Outcome est une autre variable d'interet elle est expliquée par les autres variables
-Voici un apercu de la base: pour mes 
+"Outcome est une autre variable d'interet elle est expliquée par les autres variables".
+Voici un apercu de la base: avec la commande head(diabetes)
 ![](images/table.png)
 ***
 2/
@@ -30,8 +30,10 @@ calculer l’odds-ratio:
 la fonction stepAIC de la librairie MASS on s'est retrouvé avec le modéle suivant 
 "Outocom" expliquée par quatre variables seulement : "Glocuse", "Pregnancies", "BMI" et "Diabe-
 tesPedigreeFunction".
+![](images/glm.png)
 Avec la librairie forestmodel on a deduit que les variables qui sont des facteurs a risque d'avoir le diabéte sont:
 "Pregnancies", "BMI" et "DiabetesPedigreeFunction".
+![](images/score.png)
 
 4/Classification suppervisée: arbre de cart et knn
 arbre de cart: le model trouvé est trés complexe avec un taux d'erreur de mauvaise prédiction est de 30%
