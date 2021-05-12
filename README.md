@@ -29,10 +29,11 @@ calculer l’odds-ratio:
 
 la fonction stepAIC de la librairie MASS on s'est retrouvé avec le modéle suivant 
 "Outocom" expliquée par quatre variables seulement : "Glocuse", "Pregnancies", "BMI" et "Diabe-
-tesPedigreeFunction".
+tesPedigreeFunction".<br/>
 ![](images/glm.png)
-Avec la librairie forestmodel on a deduit que les variables qui sont des facteurs a risque d'avoir le diabéte sont:
-"Pregnancies", "BMI" et "DiabetesPedigreeFunction".
+
+<br/> Avec la librairie forestmodel on a deduit que les variables qui sont des facteurs a risque d'avoir le diabéte sont:
+"Pregnancies", "BMI" et "DiabetesPedigreeFunction".<br/>
 ![](images/score.png)
 
 4/Classification suppervisée: arbre de cart et knn
