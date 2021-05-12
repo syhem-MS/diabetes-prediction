@@ -4,25 +4,25 @@ Dans ce travail la regression logistique a était testé dont le but d'identifie
 ***
 1/ 
 
-la base de données diabete.csv contient 9 vairiables, et 768 observations; 
-les variables sont les suivantes:
-—Pregnancies : Nombre de fois qu'une femme peut tomber enceinte
-—Glucose : Concentration en glucose plasmatique
-—BloodPressure : Pression artérielle diastolique (mm Hg)
-—SkinThickness : Épaisseur du pli cutané des triceps (mm)
-—Insulin : Insuline sérique de 2 heures (mu U / ml)
-—BMI : Indice de masse corporelle (poids en kg / (taille en m 2 ))
-—DiabetesPedigreeFunction : Fonction pedigree du diabète
-—Age
-—Outcome: variable binaire (1=patient malade, 0=patient non malade)
+la base de données diabete.csv contient 9 vairiables, et 768 observations; <br/>
+les variables sont les suivantes:<br/>
+—Pregnancies : Nombre de fois qu'une femme peut tomber enceinte<br/>
+—Glucose : Concentration en glucose plasmatique <br/>
+—BloodPressure : Pression artérielle diastolique (mm Hg)<br/>
+—SkinThickness : Épaisseur du pli cutané des triceps (mm)<br/>
+—Insulin : Insuline sérique de 2 heures (mu U / ml)<br/>
+—BMI : Indice de masse corporelle (poids en kg / (taille en m 2 )) <br/>
+—DiabetesPedigreeFunction : Fonction pedigree du diabète <br/>
+—Age<br/>
+—Outcome: variable binaire (1=patient malade, 0=patient non malade)<br/>
 "Outcome est une autre variable d'interet elle est expliquée par les autres variables".
-Voici un apercu de la base: avec la commande head(diabetes)
+Voici un apercu de la base: avec la commande head(diabetes)<br/>
 ![](images/table.png)
 ***
 2/
 
 Aprés avoir construit le premier modèle avec la fonction glm, on a comme résultat toutes les
-variables sont significatives sauf "Age", "Insulin" et "SkinThickness". 
+variables sont significatives sauf "Age", "Insulin" et "SkinThickness". <br/>
 
 3/
 calculer l’odds-ratio:
@@ -37,8 +37,7 @@ tesPedigreeFunction".<br/>
 ![](images/score.png)
 
 <br/>
-Avec la librairie ggeffect on a pu analyser l'effet de chaque variable par rapport à Outcome:
-![](images/effects.png)
+
 
 4/Classification suppervisée: arbre de cart et knn
 arbre de cart: le model trouvé est trés complexe avec un taux d'erreur de mauvaise prédiction est de 30%
