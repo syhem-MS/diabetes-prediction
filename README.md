@@ -38,7 +38,7 @@ tesPedigreeFunction".<br/>
 
 <br/>
 Avec la librairie ggeffect on a pu analyser l'effet de chaque variable par rapport à Outcome:<br/>
-![](images/effet.png)
+![](images/effect.png)
 <br/>
 4/Classification suppervisée: arbre de cart et knn
 arbre de cart: le model trouvé est trés complexe avec un taux d'erreur de mauvaise prédiction est de 30%
