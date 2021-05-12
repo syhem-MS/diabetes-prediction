@@ -36,6 +36,10 @@ tesPedigreeFunction".<br/>
 "Pregnancies", "BMI" et "DiabetesPedigreeFunction".<br/>
 ![](images/score.png)
 
+<br/>
+Avec la librairie ggeffect on a pu analyser l'effet de chaque variable par rapport à Outcome:<br/>
+![](images/effet.png)
+<br/>
 4/Classification suppervisée: arbre de cart et knn
 arbre de cart: le model trouvé est trés complexe avec un taux d'erreur de mauvaise prédiction est de 30%
 knn : le taux d'erreur de mauvaise prediction est de 21% 
