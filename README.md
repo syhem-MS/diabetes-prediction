@@ -189,8 +189,8 @@ te_decst
 rpart.plot(mdecstump) 
 ```
 ######################################################################
+# knn
 ```{r, include=F}
-#knn
 library(class)
 knn1 = knn(train = dtrain[,1:8],test = dtest[,1:8],cl = dtrain[,9],k = 1)
 summary(knn1)
