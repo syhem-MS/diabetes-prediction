@@ -75,9 +75,9 @@ modele=glm(y~Age+Pregnancies+Glucose+BloodPressure+SkinThickness+Insulin+BMI+Dia
 ```{r, include=F}
 summary(modele)
 ```
-![](images/glm.png)
-Aprés avoir construit le premier modèle avec la fonction glm, les
-variables sont toutes  significatives sauf "Age", "Insulin" et "SkinThickness". <br/>
+![](images/glm1.png)
+Aprés avoir construit le premier modèle avec la fonction glm, on fixe un seuil de 5% les
+variables sont toutes  significatives sauf "Age", "Insulin" et "SkinThickness" dont la p-value > 0.O5. <br/>
 #  4/ calcul  des odds-ratio et leurs intervalles de confiances
 ```{r, include=F}
 modele$coefficients       ##coefficients beta chapeaux
