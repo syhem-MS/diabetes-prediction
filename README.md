@@ -63,7 +63,7 @@ corrplot(correlation, method="color")
 hist(diabete$Outcome, col="pink")
 xtabs(Outcome~Age, data=diabete) 
 ```
-![](images/partition.png)
+![](images/partition1.png)
 
 
 # 2/faire la regression logistique avec glm 
