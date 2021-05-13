@@ -37,7 +37,7 @@ library(ggeffects)
 ```
 # 1/ Analyse statistique de la base de données
 ```{r, include=F}
-diabete=read.csv("/home/users/etudiant/Téléchargements/code/diabetes.csv", header=TRUE)
+diabete=read.csv("diabetes.csv", header=TRUE)
 diabete
 M=as.matrix(diabete)
 M # transformation de la base en une matrice
@@ -51,12 +51,20 @@ correlation=cor(M)
 correlation
 symnum(correlation, abbr.colnames=FALSE)
 
+
 library(corrplot)
 #install.packages("corrplot")
 corrplot(correlation, method="color")
+
+```
+![](images/cor1.png)
+
+```{r, include=F}
 hist(diabete$Outcome, col="pink")
 xtabs(Outcome~Age, data=diabete) 
 ```
+![](images/partition.png)
+
 
 # 2/faire la regression logistique avec glm 
 ```{r, include=F}
@@ -67,6 +75,7 @@ modele=glm(y~Age+Pregnancies+Glucose+BloodPressure+SkinThickness+Insulin+BMI+Dia
 ```{r, include=F}
 summary(modele)
 ```
+![](images/glm.png)
 Aprés avoir construit le premier modèle avec la fonction glm, les
 variables sont toutes  significatives sauf "Age", "Insulin" et "SkinThickness". <br/>
 #  4/ calcul  des odds-ratio et leurs intervalles de confiances
@@ -148,6 +157,7 @@ legend(0.2, 0.4, legend=c("courbe roc"),
 ggeffect(modele)
 plot(ggeffect(modele))
 ```
+![](images/prediction.png)
 ```{r, include=F}
 #install.packages("caret")
 library(caret)
