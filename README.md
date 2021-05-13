@@ -123,8 +123,7 @@ summary(reg2)
 reg3=glm(y~+Pregnancies+Glucose+BloodPressure+BMI+DiabetesPedigreeFunction,data=diabete,family=binomial(link="logit"))
 summary(reg3)
 ```
-
- odds-ratio:<br/>
+<br />
 
  Grace à la fonction stepAIC de la librairie MASS on s'est retrouvé avec le modéle suivant dont 
 "Outcome" est expliqué par quatre variables seulement : "Glocuse", "Pregnancies", "BMI" et "Diabe-
@@ -154,6 +153,9 @@ library(pROC) #courbe roc
 plot(roc(y,pred.diab),col="blue")
 legend(0.2, 0.4, legend=c("courbe roc"),
       col=c("blue"), lty=1.0:0.0, cex=0.8)
+ ```
+ ![](images/roc.png)
+ ```{r, include=F}
 ggeffect(modele)
 plot(ggeffect(modele))
 ```
