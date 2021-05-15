@@ -200,6 +200,8 @@ te_decst <- tx_er(preddecstump,dtest$Outcome)
 te_decst
 rpart.plot(mdecstump) 
 ```
+# arbre a un noeud
+![](images/arbre.png)
 ######################################################################
 # knn
 ```{r, include=F}
