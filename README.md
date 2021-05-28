@@ -2,7 +2,7 @@
 # Prédiction de diabéte chez un individu
 
 L’objectif de ce projet est de prédire la présence de diabète chez un patient en fonction de certaines charactéristiques cliniques. 
-Dans ce travail la regression logistique a était testé dont le but d'identifier les facteurs de risque associée au diabète.
+Dans ce travail la regression logistique a été testé dont le but d'identifier les facteurs de risque associés au diabète.
 ***
 
 
@@ -17,7 +17,7 @@ les variables sont les suivantes:<br/>
 —DiabetesPedigreeFunction : Fonction pedigree du diabète <br/>
 —Age<br/>
 —Outcome: variable binaire (1=patient malade, 0=patient non malade)<br/>
-"Outcome est la variable d'interet elle est expliquée par les autres variables".
+"Outcome est la variable d'intérêt elle est expliquée par les autres variables".
 Voici un apercu de la base: avec la commande head(diabetes)<br/>
 ![](images/table.png)
 ***
@@ -42,9 +42,9 @@ diabete
 M=as.matrix(diabete)
 M # transformation de la base en une matrice
 dim(diabete)
-d0<-diabete[which(diabete$Outcome==0),-9] #-7 pour enlever la variable Outcome
+d0<-diabete[which(diabete$Outcome==0),-9] #-9 pour enlever la variable Outcome
 dim(d0) 
-d1<-diabete[which(diabete$Outcome==1),-9] #-7 pour enlever la variable Outcome
+d1<-diabete[which(diabete$Outcome==1),-9] #-9 pour enlever la variable Outcome
 dim(d1) 
 #***Correlation
 correlation=cor(M)
@@ -73,7 +73,7 @@ modele=glm(y~Age+Pregnancies+Glucose+BloodPressure+SkinThickness+Insulin+BMI+Dia
 ```
 # 3/ affichage des résultats du modéle
 ```{r, include=F}
-summary(modele)
+summary(modéle)
 ```
 ![](images/glm1.png)
 Aprés avoir construit le premier modèle avec la fonction glm, on fixe un seuil de 5% les
@@ -100,7 +100,7 @@ install.packages("forestmodel")
 library(forestmodel)
 forest_model(modele)
 ```
-<br/> Avec la librairie forestmodel les variables qui sont des facteurs a risque sont:
+<br/> Avec la librairie forestmodel on peut observer les variables qui sont des facteurs a risque:
 "Pregnancies", "BMI" et "DiabetesPedigreeFunction".<br/>
 ![](images/score.png)
 
@@ -112,9 +112,9 @@ reg=stepAIC(modele,scale = 0,k=2) #Age + Pregnancies + Glucose + BloodPressure +
 #DiabetesPedigreeFunction (se sont les variables qui influance le plus sur la maladie du diabéte
 ```
 # methode 2):
- autre methode on fixe un seuil a 0.05 puis on fait la regression et avec summary on va s interesser aux valeures propres des variables 
- et on enleve a chaque fois la variable qui a la plus grande valeure propre  puis on refait la regression pour ce nouveau model
- et on repete le processus jusqu'a l'obtention d'un modéle avec que des variables significatives <br />
+ autre methode: on fixe un seuil a 0.05 puis on fait la regression et avec summary on va s'interesser aux p-value des variables 
+ et on enleve a chaque fois la variable qui a la plus grande p-value  puis on refait la regression pour ce nouveau modéle
+ et on répéte le processus jusqu'a l'obtention d'un modéle avec des variables significatives <br />
 ```{r, include=F}
 reg1=glm(y~Age+Pregnancies+Glucose+BloodPressure+Insulin+BMI+DiabetesPedigreeFunction,data=diabete,family=binomial(link="logit"))
 summary(reg1)
@@ -144,7 +144,7 @@ ggeffect(modele, " BMI")
 ggeffect(modele, "DiabetesPedigreeFunction")
 plot(allEffects(modele))
 ```
-# 7/prediction 
+# 7/prédiction
 ```{r, include=F}
 pred.diab=predict(modele,type="response") 
 pred.diab#afficher la probabilité de chaque individu  associée a la variable outcome
@@ -188,7 +188,7 @@ confusionMatrix(dtest$Outcome,predcartmax)#erreur=1-accuracy
 rpart.plot(mcartmax) #on trouve un arbre compliqué donc il faut élaguer
 plotcp(mcartmax)
 # Elagage
-mcart <- prune(mcartmax,cp=0,044)#cp=?
+mcart <- prune(mcartmax,cp=0,044)
 predcart <- predict(mcart,newdata=dtest,type="class")
 te_cart <- tx_er(predcart,dtest$Outcome)
 te_cart 
@@ -246,10 +246,11 @@ summary(knn1)
 ```
 avec knn le taux de mauvaise prediction est de 21% 
 
-# Récapitulatif : 
-*arbre de cart: le  modèle trouvé est trés complexe avec un taux d'erreur de mauvaise prédiction est de 30%<br/>
-*knn : le taux d'erreur de mauvaise prediction est de 21% <br/>
-*Dans les deux  modèles les taux d'erreur sont trés elevés donc ils sont rejetés.<br/>
+#Récapitulatif :
+*arbre de cart: le modèle trouvé est très complexe avec un taux d'erreur de mauvaise prédiction est de 30 %brs/>
+*Knn : le taux d'erreur de mauvaise prediction est de 21% <br/>
+*Dans les deux modèles les taux d'erreur sont très élevés donc ils sont rejetés
+
 <br/>
 5/effet de chaque vairiable sur Outcome : <br/>
 ![](images/effects.png)
