@@ -71,7 +71,7 @@ xtabs(Outcome~Age, data=diabete)
 y=as.factor(diabete$Outcome)   #une variable qui prends des valeures enre 0 et 1
 modele=glm(y~Age+Pregnancies+Glucose+BloodPressure+SkinThickness+Insulin+BMI+DiabetesPedigreeFunction,data=diabete,family=binomial(link="logit"))
 ```
-# 3/ affichage des résultats du modéle
+# 3/ affichage des résultats du modèle
 ```{r, include=F}
 summary(modéle)
 ```
@@ -113,8 +113,8 @@ reg=stepAIC(modele,scale = 0,k=2) #Age + Pregnancies + Glucose + BloodPressure +
 ```
 # methode 2):
  autre methode: on fixe un seuil a 0.05 puis on fait la regression et avec summary on va s'interesser aux p-value des variables 
- et on enleve a chaque fois la variable qui a la plus grande p-value  puis on refait la regression pour ce nouveau modéle
- et on répéte le processus jusqu'a l'obtention d'un modéle avec des variables significatives <br />
+ et on enleve a chaque fois la variable qui a la plus grande p-value  puis on refait la regression pour ce nouveau modèle
+ et on répéte le processus jusqu'a l'obtention d'un modèle avec des variables significatives <br />
 ```{r, include=F}
 reg1=glm(y~Age+Pregnancies+Glucose+BloodPressure+Insulin+BMI+DiabetesPedigreeFunction,data=diabete,family=binomial(link="logit"))
 summary(reg1)
