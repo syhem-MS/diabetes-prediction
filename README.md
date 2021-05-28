@@ -1,8 +1,8 @@
 
 # Prédiction de diabéte chez un individu
 
-L’objectif de ce projet est de prédire la présence de diabète chez un patient en fonction de certaines charactéristiques cliniques. 
-Dans ce travail la regression logistique a été testé dont le but d'identifier les facteurs de risque associés au diabète.
+L’objectif de ce projet est de prédire la présence de diabètes chez un patient en fonction de certaines caractéristiques cliniques.
+Dans ce travail la régression logistique a été testé dont le but d'identifier les facteurs de risque associés au diabète.
 ***
 
 
@@ -17,7 +17,7 @@ les variables sont les suivantes:<br/>
 —DiabetesPedigreeFunction : Fonction pedigree du diabète <br/>
 —Age<br/>
 —Outcome: variable binaire (1=patient malade, 0=patient non malade)<br/>
-"Outcome est la variable d'intérêt elle est expliquée par les autres variables".
+"Outcome est la variable d'intérêt elle est expliquée par les autres variables". <br/>
 Voici un apercu de la base: avec la commande head(diabetes)<br/>
 ![](images/table.png)
 ***
@@ -244,13 +244,13 @@ d1<-dtest[which(dtest$Outcome==1),-9] #-7 pour enlever la variable Outcome
 dim(d1) #53 de 1
 summary(knn1)
 ```
-avec knn le taux de mauvaise prediction est de 21% 
+avec knn le taux de mauvaise prediction est de 21%   <br/>
 
 #Récapitulatif :
-*arbre de cart: le modèle trouvé est très complexe avec un taux d'erreur de mauvaise prédiction est de 30 %brs/>
+*arbre de cart: le modèle trouvé est très complexe avec un taux d'erreur de mauvaise prédiction est de 30 %<br/>
 *Knn : le taux d'erreur de mauvaise prediction est de 21% <br/>
-*Dans les deux modèles les taux d'erreur sont très élevés donc ils sont rejetés
+*Dans les deux modèles les taux d'erreur sont très élevés donc ils sont rejetés  <br/>
 
-<br/>
+
 5/effet de chaque vairiable sur Outcome : <br/>
 ![](images/effects.png)
